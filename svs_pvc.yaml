@@ -1,0 +1,14 @@
+# service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: loadbalancer-service
+spec:
+  selector:
+    app: my-app
+  ports:
+    - protocol: TCP
+      port: 8083        # Service port
+      targetPort: 9093  # Pod port
+  type: LoadBalancer
+
